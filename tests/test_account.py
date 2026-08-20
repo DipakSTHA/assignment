@@ -56,3 +56,8 @@ def test_invalid_amount():
 
     with pytest.raises(ValueError, match="greater than zero"):
         account.withdraw(0.0)
+
+
+def test_negative_initial_balance():
+    with pytest.raises(ValueError, match="Initial balance cannot be negative"):
+        BankAccount("ACC001", -50.0)

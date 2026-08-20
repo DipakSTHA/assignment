@@ -1,5 +1,7 @@
 class BankAccount:
     def __init__(self, account_id: str, balance: float = 0.0):
+        if balance < 0:
+            raise ValueError("Initial balance cannot be negative.")
         self.account_id = account_id
         self.balance = float(balance)
 
